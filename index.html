@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -17,7 +18,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#fafafa;
+background:#f8f8f8;
 color:#222;
 overflow-x:hidden;
 }
@@ -25,23 +26,19 @@ overflow-x:hidden;
 /* NAVBAR */
 nav{
 position:fixed;
-width:100%;
 top:0;
-left:0;
-padding:20px 8%;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.65);
+padding:18px 8%;
+background:rgba(0,0,0,0.75);
 backdrop-filter:blur(10px);
 z-index:1000;
-transition:0.3s;
 }
 
-nav h2{
-color:#fff;
-font-weight:600;
-letter-spacing:1px;
+nav img{
+height:45px;
 }
 
 nav ul{
@@ -64,8 +61,8 @@ color:#ffcc00;
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1604908177522-429b9f2c52f4?auto=format&fit=crop&w=1600&q=80');
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url('virtual1.png');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -77,33 +74,34 @@ color:white;
 padding:0 20px;
 }
 
+.hero img{
+width:220px;
+margin-bottom:20px;
+}
+
 .hero h1{
-font-size:70px;
-font-weight:700;
+font-size:56px;
+font-weight:600;
 letter-spacing:2px;
-animation:fadeUp 1.2s ease forwards;
 }
 
 .hero p{
-margin-top:15px;
-font-size:22px;
-font-weight:300;
+margin-top:12px;
+font-size:20px;
 opacity:0.9;
-animation:fadeUp 1.6s ease forwards;
 }
 
 .hero-buttons{
-margin-top:35px;
+margin-top:30px;
 display:flex;
 gap:20px;
-animation:fadeUp 2s ease forwards;
 }
 
 .btn{
-padding:14px 32px;
+padding:14px 30px;
 border-radius:40px;
-font-weight:500;
 text-decoration:none;
+font-weight:500;
 transition:0.3s;
 }
 
@@ -126,14 +124,13 @@ background:#fff;
 color:#000;
 }
 
-/* SECTION BASE */
+/* SECTIONS */
 section{
 padding:100px 8%;
 }
 
 .section-title{
-font-size:38px;
-font-weight:600;
+font-size:36px;
 text-align:center;
 margin-bottom:60px;
 color:#c62828;
@@ -141,11 +138,10 @@ color:#c62828;
 
 /* ABOUT */
 .about p{
-max-width:800px;
+max-width:850px;
 margin:20px auto;
 text-align:center;
 line-height:1.8;
-font-size:17px;
 }
 
 /* GRID */
@@ -156,92 +152,36 @@ gap:30px;
 }
 
 .card{
-background:#fff;
+background:white;
 padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.06);
+border-radius:18px;
+box-shadow:0 12px 30px rgba(0,0,0,0.05);
 transition:0.4s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.12);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
 }
 
-/* PHILOSOPHY */
-.philosophy{
+/* FLAGSHIP PREVIEW */
+.flagship{
 background:#fff5e6;
+text-align:center;
 }
 
-/* MENU */
-.menu{
-background:#fafafa;
-}
-
-/* WHY */
-.why{
-background:#fff5e6;
-}
-
-/* EXPANSION TIMELINE */
-.timeline{
-position:relative;
-max-width:900px;
-margin:auto;
-}
-
-.timeline::after{
-content:'';
-position:absolute;
-width:4px;
-background:#c62828;
-top:0;
-bottom:0;
-left:50%;
-margin-left:-2px;
-}
-
-.timeline-item{
-padding:20px 40px;
-position:relative;
-width:50%;
-}
-
-.timeline-item:nth-child(odd){
-left:0;
-}
-
-.timeline-item:nth-child(even){
-left:50%;
-}
-
-.timeline-item::before{
-content:'';
-position:absolute;
-width:20px;
-height:20px;
-background:#ffcc00;
-border-radius:50%;
-top:25px;
-right:-10px;
-z-index:1;
-}
-
-.timeline-item:nth-child(even)::before{
-left:-10px;
-}
-
-.timeline-content{
-background:#fff;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+.flagship img{
+width:100%;
+max-width:1000px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+margin-top:40px;
 }
 
 /* PARTNER */
 .partner{
 background:#c62828;
-color:#fff;
+color:white;
 text-align:center;
 }
 
@@ -262,55 +202,40 @@ color:#fff;
 margin-bottom:10px;
 }
 
-/* ANIMATION */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{
+font-size:40px;
 }
-to{
-opacity:1;
-transform:translateY(0);
+.hero img{
+width:160px;
+}
+nav ul{
+display:none;
 }
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-.timeline::after{
-left:20px;
-}
-.timeline-item{
-width:100%;
-padding-left:60px;
-padding-right:20px;
-}
-.timeline-item:nth-child(even){
-left:0;
-}
-.timeline-item::before{
-left:10px;
-}
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-<h2>Chaat Sabha</h2>
+<img src="logo.png" alt="Chaat Sabha Logo">
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#menu">Menu</a></li>
-<li><a href="#expansion">Expansion</a></li>
+<li><a href="#flagship">Flagship</a></li>
 <li><a href="#partner">Partner</a></li>
 </ul>
 </nav>
 
 <section class="hero">
-<h1>Chaat Sabha</h1>
-<p>Taste the Desi India</p>
+<img src="logo.png" alt="Chaat Sabha">
+<h1>Taste the Desi India</h1>
 <p>Clean. Modern. Vegetarian.</p>
 <p>Reimagining India's favourite street snacks in a hygienic QSR format.</p>
+
 <div class="hero-buttons">
 <a href="#menu" class="btn btn-primary">Explore Menu</a>
 <a href="#partner" class="btn btn-outline">Partner With Us</a>
@@ -319,23 +244,16 @@ left:10px;
 
 <section id="about" class="about">
 <h2 class="section-title">A Modern Take on Indian Street Food</h2>
-<p>Chaat Sabha is a clean, modern vegetarian QSR brand delivering authentic Indian snacks in an organized and scalable format.</p>
-<p>We transform traditional street food into a structured, hygienic, and consistent dining experience — without compromising on flavour.</p>
+<p>
+Chaat Sabha is a structured vegetarian QSR brand built to deliver authentic Indian snacks in an organized and scalable format.
+</p>
+<p>
+We bridge traditional street flavour with operational excellence, hygiene transparency, and consistent execution.
+</p>
 <p><strong>100% Vegetarian. System-driven. Built for expansion.</strong></p>
 </section>
 
-<section class="philosophy">
-<h2 class="section-title">Street Flavour. QSR Standards.</h2>
-<div class="grid">
-<div class="card">Structured preparation</div>
-<div class="card">Transparent hygiene</div>
-<div class="card">Consistent quality</div>
-<div class="card">Modern presentation</div>
-<div class="card">Scalable systems</div>
-</div>
-</section>
-
-<section id="menu" class="menu">
+<section id="menu">
 <h2 class="section-title">Designed for Speed, Quality & Repeat Value</h2>
 <div class="grid">
 <div class="card">Signature Pani Puri (Cup Format)</div>
@@ -346,38 +264,15 @@ left:10px;
 </div>
 </section>
 
-<section class="why">
-<h2 class="section-title">Why Chaat Sabha?</h2>
-<div class="grid">
-<div class="card">100% Vegetarian</div>
-<div class="card">Modern QSR Store Design</div>
-<div class="card">Standardized Recipes</div>
-<div class="card">Compact, Scalable Format</div>
-<div class="card">High Repeat Potential</div>
-</div>
-</section>
-
-<section id="expansion">
-<h2 class="section-title">Expansion Vision</h2>
-<div class="timeline">
-<div class="timeline-item">
-<div class="timeline-content">Phase 1 – Flagship Launch (Hyderabad)</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-content">Phase 2 – 20–30 Outlets within the City</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-content">Phase 3 – Telangana Expansion</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-content">Phase 4 – South India Growth</div>
-</div>
-</div>
+<section id="flagship" class="flagship">
+<h2 class="section-title">Flagship Experience Preview</h2>
+<p>This is how a Chaat Sabha flagship outlet is envisioned — premium, warm, efficient and scalable.</p>
+<img src="virtual1.png" alt="Chaat Sabha Flagship Preview">
 </section>
 
 <section id="partner" class="partner">
-<h2 class="section-title" style="color:#fff;">Partner With Us</h2>
-<p>We are actively seeking high-footfall commercial spaces, campus partnerships, and institutional locations.</p>
+<h2 class="section-title" style="color:white;">Partner With Us</h2>
+<p>We are actively seeking high-footfall commercial spaces, campus partnerships and institutional locations.</p>
 <p><strong>Email:</strong> partnerships@chaatsabha.com</p>
 <p><strong>Location:</strong> Hyderabad, India</p>
 </section>
